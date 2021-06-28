@@ -4,10 +4,11 @@ from replit import clear
 auction_pool = {}
 end_of_bids = False
 
-def find_highest_bidder():
-  pass
 
+from art import logo
+import operator
 
+print(logo)
 while not end_of_bids:
   
   name = input("Please insert your name: ")
@@ -18,12 +19,16 @@ while not end_of_bids:
   if more_players == 'y':
     clear()
   elif more_players == 'n': 
+    highest_bidder = max(auction_pool.items(), key=operator.itemgetter(1))[0]
+    print(f'The winner of the auction is {highest_bidder} with a bid of {auction_pool[highest_bidder]}')
+
     end_of_bids = True
 
 
 
 
-  
+
+ 
 
 
 
